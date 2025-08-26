@@ -1,8 +1,10 @@
 <?php
+//ENTRADAS//
 $nome = $_GET["nome"];
 $valorcompra = filter_input(INPUT_GET, "compra", FILTER_VALIDATE_FLOAT);
 $tipocliente = $_GET["tipocliente"];
 
+//PROCESSAMENTO//
 if ($tipocliente == "vip") { 
     $desconto = $valorcompra * 0.10;
 } else {
@@ -26,6 +28,7 @@ $valorfinal = $valorcompra - $desconto;
     <div id="resultado">
     
     <?php
+    //SAÍDAS//
     echo "Nome do Cliente: " . $nome . "<br>";
     echo "Valor da Compra: R$ " . number_format($valorcompra, 2, ',', '.') . "<br>";
     echo "Valor a Pagar: R$ " . number_format($valorfinal, 2, ',', '.') . "<br>";
